@@ -1,0 +1,20 @@
+services:
+  telly-vc-p:
+    build: .
+    environment:
+      ADMINS: $ADMINS
+      API_ID: $API_ID  
+      API_HASH: $API_HASH  
+      AUTH_CHANNEL: $AUTH_CHANNEL
+      AUTH_USERS: $AUTH_USERS
+      BOT_TOKEN: $BOT_TOKEN
+      CH_FILTER: $CH_FILTER
+      CH_LINK : $CH_LINK
+      CHANNELS: $CHANNELS
+      COLLECTION_NAME: $COLLECTION_NAME
+      LOG_CHANNEL: $LOG_CHANNEL
+      DATABASE_NAME: $DATABASE_NAME
+      DATABASE_URL: $DATABASE_URL
+    resources:
+      cpu: 1000m
+      memory: 3Gi
