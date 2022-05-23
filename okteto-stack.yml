@@ -14,7 +14,7 @@ services:
       COLLECTION_NAME: $COLLECTION_NAME
       LOG_CHANNEL: $LOG_CHANNEL
       DATABASE_NAME: $DATABASE_NAME
-      DATABASE_URL: $DATABASE_URL
+      DATABASE_URI: $DATABASE_URI
     resources:
       cpu: 1000m
       memory: 3Gi
