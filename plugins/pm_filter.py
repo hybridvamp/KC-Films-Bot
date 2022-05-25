@@ -376,7 +376,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 msg1 = await query.message.reply(
                 f'<b>Hey 👋 {query.from_user.mention}\n'
                 f'<b>📫 Yᴏuʀ Fɪʟᴇ ɪꜱ Rᴇᴀᴅʏ 👇\n\n'
-                f'<b>↬ ғɪʟᴇ ɴᴀᴍᴇ: </b><code>{title}</code>\n'
+                f'<b>↬ Fɪʟᴇ ɴᴀᴍᴇ: </b><code>{title}</code>\n'
                 f'<b>↬ sɪᴢᴇ:</b> {size}\n\n'
                 '<code>⚠️ This File Will be Deleted within 5 Mins..! ⚠️</code>',
                 True,
