@@ -1,5 +1,5 @@
 services:
-  telly-vc-p:
+  kc-films-bot:
     build: .
     environment:
       ADMINS: $ADMINS
