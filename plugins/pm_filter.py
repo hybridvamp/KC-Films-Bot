@@ -393,7 +393,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     ]
                 )
             )
-            await query.answer('Check "KC | File Channel" For Your File',show_alert=True)
+            await query.answer('Check "KC || File Channel" For Your File',show_alert=True)
             await asyncio.sleep(300)
             await msg1.delete()            
             await ms.delete()
