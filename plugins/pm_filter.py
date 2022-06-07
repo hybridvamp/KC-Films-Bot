@@ -370,14 +370,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ms = await client.send_cached_media(
                     chat_id=CH_FILTER,
                     file_id=file_id,
-                    caption=f'<b>Hey 👋 {query.from_user.mention}</b>\n\n<b>↬ File Name:</b><code> {title}</code>\n<b>↬ Size:</b> {size}\n\n<code>❗️𝐃𝐨𝐧𝐭 𝐅𝐨𝐫𝐠𝐞𝐭 𝐭𝐨 𝐅𝐨𝐫𝐰𝐚𝐫𝐝 𝐭𝐡𝐞 𝐅𝐢𝐥𝐞 𝐭𝐨 𝐒𝐚𝐯𝐞𝐝 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 𝐛𝐞𝐟𝐨𝐫𝐞 𝐃𝐞𝐥𝐞𝐭𝐞..!❗️</code>\n\n =========== • ✠ • ===========\n▫️ <b>ᴄʜᴀɴɴᴇʟ :</b> <i>@KCFilmss</i>\n▫️ <b>ɢʀᴏᴜᴘ : </b><i>@KC_Films</i>\n=========== • ✠ • ===========',
+                    caption=f'<b>Hey 👋 {query.from_user.mention}</b>\n\n<b>↱ File Name:</b><code> {title}</code>\n<b>↳ Size:</b> {size}\n\n<b>╭=== • ❰ᴊᴏɪɴ ᴡɪᴛʜ ᴜs❱ • ===➣\n▫️ ᴄʜᴀɴɴᴇʟ :<i> @KCFilmss</i>\n▫️ ɢʀᴏᴜᴘ :<i> @KC_Films</i>\n╰======= • ✠ • =======➣</b>',
                     protect_content=True if ident == "filep" else False 
                 )
                 msg1 = await query.message.reply(
                 f'<b>Hey 👋 {query.from_user.mention}\n'
                 f'<b>📫 Yᴏuʀ Fɪʟᴇ ɪꜱ Rᴇᴀᴅʏ 👇\n\n'
-                f'<b>↬ Fɪʟᴇ ɴᴀᴍᴇ: </b><code>{title}</code>\n'
-                f'<b>↬ sɪᴢᴇ:</b> {size}\n\n'
+                f'<b>↱ Fɪʟᴇ ɴᴀᴍᴇ: </b><code>{title}</code>\n'
+                f'<b>↳ sɪᴢᴇ:</b> {size}\n\n'
                 '<code>⚠️ This File Will be Deleted within 5 Mins..! ⚠️</code>',
                 True,
                 'html',
