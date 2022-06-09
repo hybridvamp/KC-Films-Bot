@@ -26,8 +26,7 @@ async def start(client, message):
                 InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=help")
             ],
             [
-                InlineKeyboardButton('⚡️ Main Channel ⚡️', url="https://t.me/KCFilmss"),
-                InlineKeyboardButton('🔰 Main Group 🔰', url="https://t.me/KC_Films")
+                InlineKeyboardButton('🔶 KC || File Channel 🔶', url=f"https://t.me/+ZtS8TtYNgI9jMTA1")
             ],
             [
                 InlineKeyboardButton('⚜️ Backup Channel ⚜️', url="https://t.me/+7AyTKA_SqdsyNWNl"),
@@ -72,10 +71,13 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "📧 ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 📧", url=invite_link.invite_link
+                    "⚡️ Main Channel ⚡️", url=invite_link.invite_link
                 )
             ]
         ]
+
+        if message.command[1] != "subscribe":
+            btn.append([InlineKeyboardButton("🔁 𝐓𝐫𝐲 𝐀𝐠𝐚𝐢𝐧 🔁", callback_data=f"checksub#{message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
             text="**Please Join Main Updates Channel to use this Bot!**",
