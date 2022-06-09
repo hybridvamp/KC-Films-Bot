@@ -245,7 +245,7 @@ async def start(client, message):
         file_id=file_id,
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
-        reply_markup=InlineKeyboardMarkup([[ InlineKeyboardButton('⚡️ Main Channel ⚡️', url='https://t.me/KCFilmss') ]])
+        reply_markup=InlineKeyboardMarkup([[ InlineKeyboardButton('⚜️ Backup Channel ⚜️', url='https://t.me/+7AyTKA_SqdsyNWNl') ]])
         )
 @Client.on_message((filters.command(["report"]) | filters.regex("@admins") | filters.regex("@admin")) & filters.group)
 async def report(bot, message):
