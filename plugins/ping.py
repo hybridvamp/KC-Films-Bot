@@ -18,5 +18,5 @@ async def ping(_, message):
     time_taken_s = (end_t - start_t) * 1000
     uptime = time.strftime("%Hh | %Mm | %Ss", time.gmtime(time.time() - BOT_START_TIME))   
     await avr.edit(f"‹ Current Bot Status ›\n\n‹› Pong : {time_taken_s:.3f} ms\n‹› Uptime : {uptime}")
-    await asyncio.sleep(20)
+    await asyncio.sleep(300)
     await avr.delete()
