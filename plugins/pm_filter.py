@@ -329,77 +329,84 @@ async def cb_handler(client: Client, query: CallbackQuery):
             alert = alert.replace("\\n", "\n").replace("\\t", "\t")
             await query.answer(alert, show_alert=True)
     if query.data.startswith("file"):
-        ident, file_id = query.data.split("#")
-        files_ = await get_file_details(file_id)
-        if not files_:
-            return await query.answer('No such file exist.')
-        files = files_[0]
-        title = files.file_name
-        size = get_size(files.file_size)
-        type = files.file_type
-        mention = query.from_user.mention
-        f_caption = files.caption
-        settings = await get_settings(query.message.chat.id)
-        if CUSTOM_FILE_CAPTION:
-            try:
-                f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
-                                                       file_size='' if size is None else size,
-                                                       file_caption='' if f_caption is None else f_caption)
-                
-                buttons = [[
-                  InlineKeyboardButton('🔰 Main Group 🔰', url='https://t.me/KC_Films')
-                  ]]
-            except Exception as e:
-                logger.exception(e)
-            f_caption = f_caption
-            size = size
-            mention = mention
-        if f_caption is None:
-            f_caption = f"{files.file_name}"
-            size = f"{files.file_size}"
-            mention = f"{query.from_user.mention}"
-
+        clicked = query.from_user.id
         try:
-            if AUTH_CHANNEL and not await is_subscribed(client, query):
-                await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
-                return
-            elif settings['botpm']:
-                await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
-                return
-            else:
-                ms = await client.send_cached_media(
-                    chat_id=CH_FILTER,
-                    file_id=file_id,
-                    caption=f'<b>Hey 👋 {query.from_user.mention}</b>\n\n<b>↱ File Name:</b><code> {title}</code>\n<b>↳ Size:</b> {size}\n\n\n<b>╭─── • ❰ᴊᴏɪɴ ᴡɪᴛʜ ᴜs❱ • ───➣\n┣ ▫️ ᴄʜᴀɴɴᴇʟ :<i> @KCFilmss</i>\n┣ ▫️ ɢʀᴏᴜᴘ :<i> @KC_Films</i>\n╰─────── • ◆ • ───────➣</b>',
-                    protect_content=True if ident == "filep" else False 
-                )
-                msg1 = await query.message.reply(
-                f'<b>Hey 👋 {query.from_user.mention}  📫 Yᴏuʀ Fɪʟᴇ ɪꜱ Rᴇᴀᴅʏ 👇\n\n'
-                f'<b>↱ Fɪʟᴇ ɴᴀᴍᴇ: </b><code>{title}</code>\n'
-                f'<b>↳ sɪᴢᴇ:</b> {size}\n\n'
-                '<b><i>⚠️ This File Will be Deleted within 5 Mins..! ⚠️</i></b>',
-                True,
-                'html',
-                disable_web_page_preview=True,
-                reply_markup=InlineKeyboardMarkup(
-                    [
+            typed = query.message.reply_to_message.from_user.id
+        except:
+            typed = query.from_user.id
+            pass
+        if int(clicked) == typed:
+            ident, file_id = query.data.split("#")
+            files_ = await get_file_details(file_id)
+            if not files_:
+                return await query.answer('No such file exist.')
+            files = files_[0]
+            title = files.file_name
+            size = get_size(files.file_size)
+            type = files.file_type
+            mention = query.from_user.mention
+            f_caption = files.caption
+            settings = await get_settings(query.message.chat.id)
+            if CUSTOM_FILE_CAPTION:
+                try:
+                    f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
+                                                        file_size='' if size is None else size,
+                                                        file_caption='' if f_caption is None else f_caption)
+                    
+                    buttons = [[
+                    InlineKeyboardButton('🔰 Main Group 🔰', url='https://t.me/KC_Films')
+                    ]]
+                except Exception as e:
+                    logger.exception(e)
+                f_caption = f_caption
+                size = size
+                mention = mention
+            if f_caption is None:
+                f_caption = f"{files.file_name}"
+                size = f"{files.file_size}"
+                mention = f"{query.from_user.mention}"
+
+            try:
+                if AUTH_CHANNEL and not await is_subscribed(client, query):
+                    await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                    return
+                elif settings['botpm']:
+                    await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                    return
+                else:
+                    ms = await client.send_cached_media(
+                        chat_id=CH_FILTER,
+                        file_id=file_id,
+                        caption=f'<b>Hey 👋 {query.from_user.mention}</b>\n\n<b>↱ File Name:</b><code> {title}</code>\n<b>↳ Size:</b> {size}\n\n\n<b>╭─── • ❰ᴊᴏɪɴ ᴡɪᴛʜ ᴜs❱ • ───➣\n┣ ▫️ ᴄʜᴀɴɴᴇʟ :<i> @KCFilmss</i>\n┣ ▫️ ɢʀᴏᴜᴘ :<i> @KC_Films</i>\n╰─────── • ◆ • ───────➣</b>',
+                        protect_content=True if ident == "filep" else False 
+                    )
+                    msg1 = await query.message.reply(
+                    f'<b>Hey 👋 {query.from_user.mention}  📫 Yᴏuʀ Fɪʟᴇ ɪꜱ Rᴇᴀᴅʏ 👇\n\n'
+                    f'<b>↱ Fɪʟᴇ ɴᴀᴍᴇ: </b><code>{title}</code>\n'
+                    f'<b>↳ sɪᴢᴇ:</b> {size}\n\n'
+                    '<b><i>⚠️ This File Will be Deleted within 5 Mins..! ⚠️</i></b>',
+                    True,
+                    'html',
+                    disable_web_page_preview=True,
+                    reply_markup=InlineKeyboardMarkup(
                         [
-                            InlineKeyboardButton("📥 Click Here To Download The File 📥", url = ms.link)
-                        ],
-                        [
-                            InlineKeyboardButton("⚠️ Can't View the File ❓ Click Here ⚠️", url = f"{CH_LINK}")
+                            [
+                                InlineKeyboardButton("📥 Click Here To Download The File 📥", url = ms.link)
+                            ],
+                            [
+                                InlineKeyboardButton("⚠️ Can't View the File ❓ Click Here ⚠️", url = f"{CH_LINK}")
+                            ]
                         ]
-                    ]
+                    )
                 )
-            )
-            await query.answer('Check "KC || File Channel" For Your File',show_alert=True)
-            await asyncio.sleep(300)
-            await msg1.delete()            
-            await ms.delete()
-            del msg1, ms
-        except Exception as e:
-            logger.exception(e, exc_info=True)
-            await query.answer(f"Encountering Issues", True)
+                await query.answer('Check "KC || File Channel" For Your File',show_alert=True)
+                await asyncio.sleep(300)
+                await msg1.delete()            
+                await ms.delete()
+                del msg1, ms
+            except Exception as e:
+                logger.exception(e, exc_info=True)
+                await query.answer(f"Encountering Issues", True)
 
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
