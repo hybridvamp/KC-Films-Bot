@@ -384,17 +384,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f'<b>Hey 👋 {query.from_user.mention}  📫 Yᴏuʀ Fɪʟᴇ ɪꜱ Rᴇᴀᴅʏ 👇\n\n'
                     f'<b>↱ Fɪʟᴇ ɴᴀᴍᴇ: </b><code>{title}</code>\n'
                     f'<b>↳ sɪᴢᴇ:</b> {size}\n\n'
-                    '<b><i>⚠️ This File Will be Deleted within 5 Mins..! ⚠️</i></b>',
+                    f'<b><i>⚠️ This File Will be Deleted within 5 Mins..! ⚠️</i></b>',
                     True,
                     'html',
                     disable_web_page_preview=True,
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("📥 Click Here To Download The File 📥", url = ms.link)
+                                InlineKeyboardButton("📥 Click Here To Download 📥", url = ms.link)
                             ],
                             [
-                                InlineKeyboardButton("⚠️ Can't View the File ❓ Click Here ⚠️", url = f"{CH_LINK}")
+                                InlineKeyboardButton("⚠️ Can't View the File ❓ Join Now ⚠️", url = f"{CH_LINK}")
                             ]
                         ]
                     )
