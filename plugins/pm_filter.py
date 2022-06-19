@@ -352,10 +352,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
                                                         file_size='' if size is None else size,
                                                         file_caption='' if f_caption is None else f_caption)
-                    
-                    buttons = [[
-                    InlineKeyboardButton('🔰 Main Group 🔰', url='https://t.me/KC_Films')
-                    ]]
                 except Exception as e:
                     logger.exception(e)
                 f_caption = f_caption
@@ -651,7 +647,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-    await query.answer('Piracy Is Crime')
+    await query.answer('Mmmm.... എന്നിട്ട്...!!!')
 
     
 async def auto_filter(client, msg, spoll=False):
