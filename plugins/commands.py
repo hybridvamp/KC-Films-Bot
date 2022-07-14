@@ -26,11 +26,11 @@ async def start(client, message):
                 InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=help")
             ],
             [
-                InlineKeyboardButton('🔶 KC || File Channel 🔶', url=f"https://t.me/+ZtS8TtYNgI9jMTA1")
+                InlineKeyboardButton('🔶 HYBRID || File Channel 🔶', url=f"{CH_LINK}")
             ],
             [
-                InlineKeyboardButton('⚜️ Backup Channel ⚜️', url="https://t.me/+7AyTKA_SqdsyNWNl"),
-                InlineKeyboardButton('🧲 Backup Group 🧲', url="https://t.me/KC_Filmz")
+                InlineKeyboardButton('⚜️ Main Channel ⚜️', url="https://t.me/HYBRID_MOVIES"),
+                InlineKeyboardButton('🧲 Movies Group 🧲', url="https://t.me/HYBRID_MOVIE_GROUP")
             ],
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -48,7 +48,7 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('⛑ Contact Owner', url=f'http://t.me/KCAjm')
+            InlineKeyboardButton('⛑ Contact Owner', url=f'http://t.me/HYBRID_Chat')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')        
@@ -90,7 +90,7 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('⛑ Contact Owner', url=f'http://t.me/KCAjm')
+            InlineKeyboardButton('⛑ Contact Owner', url=f'http://t.me/HYBRID_Chat')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')               
@@ -281,7 +281,7 @@ async def bot(bot, message):
         InlineKeyboardButton("ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅꜱ", callback_data="commands"),
         InlineKeyboardButton("ᴇɴqᴜɪʀy", callback_data="enqury")
         ],[
-        InlineKeyboardButton("🔰 Main Group 🔰", url='https://t.me/KC_Films')
+        InlineKeyboardButton("🔰 Main Group 🔰", url='https://t.me/HYBRID_Movie_Group')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await message.reply_chat_action("typing")
@@ -296,14 +296,14 @@ async def bot(bot, message):
 @Client.on_message(filters.command("update"))
 async def update(bot, message):
     buttons = [[
-        InlineKeyboardButton("⚡️ Main Channel ⚡️", url='t.me/KCFilmss')       
+        InlineKeyboardButton("⚡️ Main Channel ⚡️", url='t.me/HYBRID_Movies')       
         ],[
-        InlineKeyboardButton("🔰 Main Group 🔰", url='t.me/KC_Films')
+        InlineKeyboardButton("🔰 Updates Channel 🔰", url='t.me/HYBRID_Bots')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await message.reply_chat_action("typing")
     await message.reply_photo(
-        photo="https://te.legra.ph/file/f58032b4b41f5335e0a33.jpg",
+        photo="https://te.legra.ph/file/81d0ba18954cc4bbe5c2e.jpg",
         caption=script.UPDATE_CMD.format(message.from_user.mention),
         reply_markup=reply_markup,
         parse_mode="html")
@@ -311,9 +311,9 @@ async def update(bot, message):
 @Client.on_message(filters.command("cmd"))
 async def cmd(bot, message):
     buttons = [[
-        InlineKeyboardButton("⚡️ Main Channel ⚡️", url='t.me/KCFilmss')       
+        InlineKeyboardButton("⚡️ Main Channel ⚡️", url='t.me/HYBRID_Movies')       
         ],[
-        InlineKeyboardButton("🔰 Main Group 🔰", url='t.me/KC_Films')
+        InlineKeyboardButton("🔰 Main Group 🔰", url='t.me/HYBRID_Bots')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await message.reply_photo(

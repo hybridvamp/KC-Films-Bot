@@ -373,7 +373,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     ms = await client.send_cached_media(
                         chat_id=CH_FILTER,
                         file_id=file_id,
-                        caption=f'<b>Hey 👋 {query.from_user.mention}</b>\n\n<b>↱ File Name:</b><code> {title}</code>\n<b>↳ Size:</b> {size}\n\n\n<b>╭─── • ❰ᴊᴏɪɴ ᴡɪᴛʜ ᴜs❱ • ───➣\n┣ ▫️ ᴄʜᴀɴɴᴇʟ :<i> @KCFilmss</i>\n┣ ▫️ ɢʀᴏᴜᴘ :<i> @KC_Films</i>\n╰─────── • ◆ • ───────➣</b>',
+                        caption=f'<b>Hey 👋 {query.from_user.mention}</b>\n\n<b>↱ File Name:</b><code> {title}</code>\n<b>↳ Size:</b> {size}\n\n\n<b>╭─── • ❰ᴊᴏɪɴ ᴡɪᴛʜ ᴜs❱ • ───➣\n┣ ▫️ ᴄʜᴀɴɴᴇʟ :<i> @HYBRID_Movies</i>\n┣ ▫️ ɢʀᴏᴜᴘ :<i> @HYBRID_Movie_Group</i>\n╰─────── • ◆ • ───────➣</b>',
                         protect_content=True if ident == "filep" else False 
                     )
                     msg1 = await query.message.reply(
@@ -395,7 +395,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         ]
                     )
                 )
-                await query.answer('Check "KC || File Channel" For Your File',show_alert=True)
+                await query.answer('Check "HYBRID || File Channel" For Your File',show_alert=True)
                 await asyncio.sleep(300)
                 await msg1.delete()            
                 await ms.delete()
@@ -422,7 +422,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                                        file_size='' if size is None else size,
                                                        file_caption='' if f_caption is None else f_caption)
                 buttons = [[
-                  InlineKeyboardButton('🔰 Main Group 🔰', url='https://t.me/KC_Films')
+                  InlineKeyboardButton('🔰 Main Group 🔰', url='https://t.me/HYBRID_Movie_Group')
                   ]]
             except Exception as e:
                 logger.exception(e)
@@ -442,7 +442,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ],[
-            InlineKeyboardButton('⛑ Contact Owner', url=f'http://t.me/KCAjm')
+            InlineKeyboardButton('⛑ Contact Owner', url=f'http://t.me/HYBRID_Chat')
             ],
         [
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
@@ -706,14 +706,14 @@ async def auto_filter(client, msg, spoll=False):
              InlineKeyboardButton(text="NEXT 🡺", callback_data=f"next_{req}_{key}_{offset}")]   
         )
         btn.insert(0,
-            [InlineKeyboardButton(text="🔶 KC || Files Channel 🔶",url="https://t.me/+PKaP3oBEgTEyZjM1")]
+            [InlineKeyboardButton(text="🔶 HYBRID || Files Channel 🔶",url="{CH_LINK}")]
         )
     else:
         btn.append(
             [InlineKeyboardButton(text="🗓 1/1", callback_data="pages")]
         )
         btn.insert(0,
-            [InlineKeyboardButton(text="🔶 KC || File Channel 🔶",url="https://t.me/+PKaP3oBEgTEyZjM1")]
+            [InlineKeyboardButton(text="🔶 HYBRID || File Channel 🔶",url="{CH_LINK}")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']

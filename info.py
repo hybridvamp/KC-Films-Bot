@@ -19,8 +19,8 @@ BOT_TOKEN = environ['BOT_TOKEN']
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
-PICS = (environ.get('PICS', 'https://te.legra.ph/file/8ffe77565614a8121258c.jpg https://te.legra.ph/file/f58032b4b41f5335e0a33.jpg https://te.legra.ph/file/765a635c12b14e1630a3d.jpg https://te.legra.ph/file/6bc57a809aa5dc73ea200.jpg https://te.legra.ph/file/4d4c357f3ad116388d153.jpg https://te.legra.ph/file/266a271fb0ea0c1f1011f.jpg https://te.legra.ph/file/4e988a3d10d55403e3661.jpg https://te.legra.ph/file/049b2d67a66da021ce7f9.jpg')).split()
-PICS_RT = (environ.get('PICS_RT', 'https://te.legra.ph/file/8ffe77565614a8121258c.jpg https://te.legra.ph/file/f58032b4b41f5335e0a33.jpg https://te.legra.ph/file/765a635c12b14e1630a3d.jpg https://te.legra.ph/file/6bc57a809aa5dc73ea200.jpg https://te.legra.ph/file/4d4c357f3ad116388d153.jpg https://te.legra.ph/file/266a271fb0ea0c1f1011f.jpg https://te.legra.ph/file/4e988a3d10d55403e3661.jpg https://te.legra.ph/file/049b2d67a66da021ce7f9.jpg')).split()
+PICS = (environ.get('PICS', 'https://te.legra.ph/file/3aac366991b4add1942de.jpg https://te.legra.ph/file/81d0ba18954cc4bbe5c2e.jpg https://te.legra.ph/file/da0e9dd08e53511513fe4.jpg https://te.legra.ph/file/f2f7e13c9a892ac71fdbd.jpg https://te.legra.ph/file/8b9650b9ff6d9a7fb9b31.jpg https://te.legra.ph/file/b6605a5e58fe8cbfeb5fc.jpg https://te.legra.ph/file/fd767d900b239dbb546f1.jpg https://te.legra.ph/file/4dce9acec512d1bcdca71.jpg')).split()
+PICS_RT = (environ.get('PICS_RT', 'https://te.legra.ph/file/3aac366991b4add1942de.jpg https://te.legra.ph/file/81d0ba18954cc4bbe5c2e.jpg https://te.legra.ph/file/da0e9dd08e53511513fe4.jpg https://te.legra.ph/file/f2f7e13c9a892ac71fdbd.jpg https://te.legra.ph/file/8b9650b9ff6d9a7fb9b31.jpg https://te.legra.ph/file/b6605a5e58fe8cbfeb5fc.jpg https://te.legra.ph/file/fd767d900b239dbb546f1.jpg https://te.legra.ph/file/4dce9acec512d1bcdca71.jpg')).split()
 
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '').split()]
@@ -34,16 +34,16 @@ AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
 DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "KCFilmss")
+DATABASE_NAME = environ.get('DATABASE_NAME', "hybrid")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'KC_Films')
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'HYBRID_Bots')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
-IMDB = is_enabled((environ.get('IMDB', "True")), True)
+IMDB = is_enabled((environ.get('IMDB', "False")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "<b>↬ File Name:</b><code> {file_name}</code>\n<b>↬ Size:</b> {file_size}\n\n<code>𝐃𝐨𝐧𝐭 𝐅𝐨𝐫𝐠𝐞𝐭 𝐭𝐨 𝐅𝐨𝐫𝐰𝐚𝐫𝐝 𝐭𝐡𝐞 𝐅𝐢𝐥𝐞 𝐭𝐨 𝐒𝐚𝐯𝐞𝐝 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 𝐛𝐞𝐟𝐨𝐫𝐞 𝐃𝐞𝐥𝐞𝐭𝐞.!</code>\n\n\n╭=== • ❰ᴊᴏɪɴ ᴡɪᴛʜ ᴜs❱ • ===➣\n▫️ <b>ᴄʜᴀɴɴᴇʟ :</b><i> @KCFilmss</i>\n▫️ <b>ɢʀᴏᴜᴘ :</b><i> @KC_Films</i>\n╰======= • ✠ • =======➣")
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "<b>↬ File Name:</b><code> {file_name}</code>\n<b>↬ Size:</b> {file_size}\n\n<code>𝐃𝐨𝐧𝐭 𝐅𝐨𝐫𝐠𝐞𝐭 𝐭𝐨 𝐅𝐨𝐫𝐰𝐚𝐫𝐝 𝐭𝐡𝐞 𝐅𝐢𝐥𝐞 𝐭𝐨 𝐒𝐚𝐯𝐞𝐝 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 𝐛𝐞𝐟𝐨𝐫𝐞 𝐃𝐞𝐥𝐞𝐭𝐞.!</code>\n\n\n╭=== • ❰ᴊᴏɪɴ ᴡɪᴛʜ ᴜs❱ • ===➣\n▫️ <b>ᴄʜᴀɴɴᴇʟ :</b><i> @HYBRID_Movies</i>\n▫️ <b>ɢʀᴏᴜᴘ :</b><i> @HYBRID_Movie_Group</i>\n╰======= • ✠ • =======➣")
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b><i>➤ Title:</i></b><code> {title}</code>\n<b><i>➤ Release:</i></b> {release_date}\n<b><i>➤ Languages:</i></b> {languages}\n\n<b>☞ Note:</b> ミ★ 𝙏𝙝𝙞𝙨 𝙈𝙚𝙨𝙨𝙖𝙜𝙚 𝙬𝙞𝙡𝙡 𝙗𝙚 𝘼𝙪𝙩𝙤-𝙙𝙚𝙡𝙚𝙩𝙚𝙙 𝙖𝙛𝙩𝙚𝙧 5 𝙈𝙞𝙣𝙪𝙩𝙚𝙨 𝙩𝙤 𝘼𝙫𝙤𝙞𝙙 𝘾𝙤𝙥𝙮𝙧𝙞𝙜𝙝𝙩 𝙄𝙨𝙨𝙪𝙚𝙨 ★彡\n\n<b><i>♤ Requested by</i></b> : {message.from_user.mention}\n\n\n<code>❗️ 1st Join below Channel to Get your Files ❗️</code>")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
